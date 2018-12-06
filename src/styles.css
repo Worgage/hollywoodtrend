@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+.rectangles {
+  width: 400px;
+  height: 250px;
+  background-color: yellow;
+  margin: 4px;
+}
+
+.square {
+  height: 200px;
+  background-color: red;
+  width: 300px;
+  margin: 2px;
+}

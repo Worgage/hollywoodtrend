@@ -1,0 +1,11 @@
+.categories-list {
+  right: 0;
+  margin-right: 40px;
+  display: flex;
+  background-color: green;
+  width: 350px;
+  height: 500px;
+  margin-top: 40px;
+}
+
+
