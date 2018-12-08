@@ -8,14 +8,20 @@
 }
 
 .logo {
-  margin-left: 10px;
-  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin-left: 30px;
 }
 
 .search {
-
+  position: absolute;
+  right: 0;
+  margin: 30px;
+  display: flex;
 }
 
-.bar {
-
+.login {
+  margin-left: 20px;
 }

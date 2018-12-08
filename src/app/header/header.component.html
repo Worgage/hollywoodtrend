@@ -1,8 +1,21 @@
-<div class="head" fxLayout="row" fxLayoutAlign="space-between center">
-  <div>
-    Logo
+<div class="head" fxLayout="row">
+  <div class="logo">
+    <img src="https://assets.hollywoodreporter.com/assets/1543955557/images/brand/thr-logo-white.svg?24f3ab0efd33df610bcf">
   </div>
-  <div >
-   Barra
+  <div class="search">
+    <mat-chip-list>
+      <mat-chip color="primary" class="search-bar">
+        <mat-form-field>
+        <input matInput>
+      </mat-form-field> <mat-icon>search</mat-icon></mat-chip>
+    </mat-chip-list>
+
+    <div class="login">
+      <mat-chip-list>
+        <mat-chip color="primary">
+          Login
+        </mat-chip>
+      </mat-chip-list>
+    </div>
   </div>
 </div>

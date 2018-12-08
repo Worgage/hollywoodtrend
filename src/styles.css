@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 .rectangles {
   width: 400px;
   height: 250px;
@@ -7,9 +10,17 @@
   margin: 4px;
 }
 
-.square {
-  height: 200px;
+.article {
+  height: 270px;
   background-color: red;
   width: 300px;
-  margin: 2px;
+  margin: 2px 2px 10px;
 }
+
+.poster {
+  background-color: black;
+  width:250px;
+  height: 375px;
+  margin: 5px;
+}
+
