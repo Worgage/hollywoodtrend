@@ -1,8 +1,12 @@
 .container-all {
-  display: block;
-  background-color: purple;
-  margin: 30px;
+  display: inline-block;
+  background-color: lightsteelblue;
+  margin: 100px;
+  margin-top: 0;
   padding-bottom: 70px;
+  position: absolute;
+  right: 0;
+  left: 0;
 }
 
 .row {
