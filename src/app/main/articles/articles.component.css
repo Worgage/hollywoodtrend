@@ -3,18 +3,17 @@
   height: 180px;
 }
 
-.art-text {
-  height: 50%;
-  display: table-cell;
-  text-align: center;
-  padding: 7px;
-}
 .art-second-text {
   height: 100%;
   display: table-cell;
   text-align: center;
   word-break: break-word;
   padding: 7px;
+}
+
+.art-text {
+  display: table-cell;
+  text-align: center;
 }
 
 
