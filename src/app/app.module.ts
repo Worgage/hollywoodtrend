@@ -8,10 +8,11 @@ import { MovieHeaderComponent } from './main/movie-header/movie-header.component
 import { ArticlesComponent } from './main/articles/articles.component';
 import {AppRoutingModule} from './main/app-routing.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatChipsModule, MatDividerModule, MatIconModule, MatInputModule} from '@angular/material';
+import {MatChipsModule, MatDividerModule, MatIconModule, MatInputModule, MatButtonModule} from '@angular/material';
 import { CategoriesComponent } from './main/categories/categories.component';
 import { ReviewsComponent } from './main/reviews/reviews.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MovieHeaderComponent,
     ArticlesComponent,
     CategoriesComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatIconModule,
     MatInputModule,
     BrowserAnimationsModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
