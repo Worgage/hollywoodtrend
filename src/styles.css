@@ -33,14 +33,14 @@ div.mat-form-field-infix {
 
 .poster {
   background-color: black;
-  width:250px;
-  height: 375px;
+  max-width:250px;
+  max-height: 375px;
   margin: 5px;
 }
 
 .header-image {
-  width: 400px;
-  height: 250px;
+  max-width: 400px;
+  max-height: 250px;
 }
 
 .mat-dialog-container {

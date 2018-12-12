@@ -3,6 +3,10 @@
   position: sticky;
 }
 
+.website-header-container{
+  position: relative;
+}
+
 
 .input-field {
   background-color: white;
@@ -25,10 +29,22 @@
 .search {
   position: absolute;
   right: 0;
-  display: flex;
   bottom: 0px;
 }
 
 .login {
   margin-left: 20px;
+}
+
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: black;
+  width: 100%;
+  height: 80px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  color: white;
 }

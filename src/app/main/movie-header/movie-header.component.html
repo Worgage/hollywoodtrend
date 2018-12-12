@@ -1,20 +1,11 @@
+<div class="header-section">
 <div class="movie-header-container" fxLayout="row" fxLayoutAlign="center center" >
-    <div class="header-rectangle">
-        <img class="header-image" src="https://pmcvariety.files.wordpress.com/2018/09/a-star-is-born-3.jpg" alt="">
+    <div class="header-rectangle" *ngFor="let i of count(3)">
+      <a routerLink="/article">
+        <img class="header-image" [src]="articles[0].img_url" alt="">
       <div class="header-text">
-        QUESTO E' IL TITOLO DEL MIO ARTICOLO
-      </div>
+        {{articles[0].title | uppercase}}
+      </div></a>
     </div>
-  <div class="header-rectangle">
-    <img class="header-image" src="https://pmcvariety.files.wordpress.com/2018/09/a-star-is-born-3.jpg" alt="">
-    <div class="header-text">
-      QUESTO E' IL TITOLO DEL MIO ARTICOLO
-    </div>
-  </div>
-  <div class="header-rectangle">
-    <img class="header-image" src="https://pmcvariety.files.wordpress.com/2018/09/a-star-is-born-3.jpg" alt="">
-    <div class="header-text">
-      QUESTO E' IL TITOLO DEL MIO ARTICOLO
-    </div>
-  </div>
+</div>
 </div>

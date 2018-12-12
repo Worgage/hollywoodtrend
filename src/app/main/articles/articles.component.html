@@ -2,72 +2,28 @@
     <div class="top-content" fxLayout="column">
       <div class="news">
         <div class="articles" fxLayout="row" fxLayoutAlign="center center">
-          <div class="article" fxLayout="column">
+          <div class="article" fxLayout="column" *ngFor="let i of count(3)">
             <div class="art-text">
-              <img class="art-image" src="https://pmcvariety.files.wordpress.com/2018/09/a-star-is-born-3.jpg" alt="">
+              <img class="art-image" [src]="articles[0].img_url" alt="">
             </div>
             <div class="art-text">
-              QUESTO E' IL TITOLO DEL MIO ARTICOLO
+              {{articles[0].title | uppercase}}
             </div>
             <div class="art-second-text">
-              ASHDLSHDLKAJHDLAKJHDLASJHDALSJHDALKJHSKLHLKJ
-            </div>
-          </div>
-          <div class="article" fxLayout="column">
-            <div class="art-text">
-              <img class="art-image" src="https://pmcvariety.files.wordpress.com/2018/09/a-star-is-born-3.jpg" alt="">
-            </div>
-            <div class="art-text">
-              QUESTO E' IL TITOLO DEL MIO ARTICOLO
-            </div>
-            <div class="art-second-text">
-              ASHDLSHDLKAJHDLAKJHDLASJHDALSJHDALKJHSKLHLKJ
-            </div>
-          </div>
-          <div class="article" fxLayout="column">
-            <div class="art-text">
-              <img class="art-image" src="https://pmcvariety.files.wordpress.com/2018/09/a-star-is-born-3.jpg" alt="">
-            </div>
-            <div class="art-text">
-              QUESTO E' IL TITOLO DEL MIO ARTICOLO
-            </div>
-            <div class="art-second-text">
-              ASHDLSHDLKAJHDLAKJHDLASJHDALSJHDALKJHSKLHLKJ
+              {{articles[0].subtext | lowercase}}
             </div>
           </div>
         </div>
         <div class="articles" fxLayout="row" fxLayoutAlign="center center">
-          <div class="article" fxLayout="column">
+          <div class="article" fxLayout="column" *ngFor="let i of count(3)">
             <div class="art-text">
-              <img class="art-image" src="https://pmcvariety.files.wordpress.com/2018/09/a-star-is-born-3.jpg" alt="">
+              <img class="art-image" [src]="articles[0].img_url" alt="">
             </div>
             <div class="art-text">
-              QUESTO E' IL TITOLO DEL MIO ARTICOLO
+              {{articles[0].title | uppercase}}
             </div>
             <div class="art-second-text">
-              ASHDLSHDLKAJHDLAKJHDLASJHDALSJHDALKJHSKLHLKJ
-            </div>
-          </div>
-          <div class="article" fxLayout="column">
-            <div class="art-text">
-              <img class="art-image" src="https://pmcvariety.files.wordpress.com/2018/09/a-star-is-born-3.jpg" alt="">
-            </div>
-            <div class="art-text">
-              QUESTO E' IL TITOLO DEL MIO ARTICOLO
-            </div>
-            <div class="art-second-text">
-              ASHDLSHDLKAJHDLAKJHDLASJHDALSJHDALKJHSKLHLKJ
-            </div>
-          </div>
-          <div class="article" fxLayout="column">
-            <div class="art-text">
-              <img class="art-image" src="https://pmcvariety.files.wordpress.com/2018/09/a-star-is-born-3.jpg" alt="">
-            </div>
-            <div class="art-text">
-              QUESTO E' IL TITOLO DEL MIO ARTICOLO
-            </div>
-            <div class="art-second-text">
-              ASHDLSHDLKAJHDLAKJHDLASJHDALSJHDALKJHSKLHLKJ
+              {{articles[0].subtext | lowercase}}
             </div>
           </div>
         </div>

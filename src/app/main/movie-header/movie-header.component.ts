@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Article} from '../../article';
 
 @Component({
   selector: 'app-movie-header',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieHeaderComponent implements OnInit {
 
+  @Input() articles: Article[];
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.articles);
+  }
+
+  count(i) {
+    return new Array(i);
   }
 
 }

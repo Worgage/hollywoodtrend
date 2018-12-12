@@ -13,6 +13,14 @@
 
 .body {
   background-color: black;
+  height: 100%;
 }
 
 
+.main {
+  background-color: white;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-style: solid;
+  max-width: 1300px !important;
+}

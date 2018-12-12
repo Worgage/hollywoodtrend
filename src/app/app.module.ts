@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { MovieHeaderComponent } from './main/movie-header/movie-header.component';
 import { ArticlesComponent } from './main/articles/articles.component';
-import {AppRoutingModule} from './main/app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
   MatButtonModule,
@@ -23,6 +23,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
+import { ArticlePageComponent } from './article-page/article-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {FormsModule} from '@angular/forms';
     ArticlesComponent,
     CategoriesComponent,
     ReviewsComponent,
-    LoginComponent
+    LoginComponent,
+    ArticlePageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+.article-container {
+  height: 100%;
+  position: relative;
+}
+
+.art-image {
+  max-width: 1000px;
+  max-height: 600px;
+}
+
+.article-body {
+  max-width: 800px;
+  min-height: 300px;
+}
+
+.article-author{
+  margin-bottom: 50px;
+  margin-left: 30px;
+}
+
+.article-title {
+  margin-left: 30px;
+}
+
+.article-body {
+  margin-left: 30px;
+}
+
+.article-path {
+  margin: 30px;
+}
+
+.comments-container {
+  min-height: 700px;
+}
+
+h1 {
+  margin: 30px;
+}
