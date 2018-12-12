@@ -1,8 +1,5 @@
 .categories-list {
-  background-color: green;
-  width: 350px;
-  height: 700px;
-  margin-bottom: 20px;
+  width: 100%;
 }
 
 .list {
@@ -15,13 +12,10 @@
 }
 
 .category {
-  width: 100%;
   display: block;
   text-align: center;
 }
 
 div.mat-chip-list-wrapper {
-  width: 100% !important;
-  margin: 30px;
 }
 

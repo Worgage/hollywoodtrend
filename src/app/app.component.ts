@@ -13,11 +13,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    /*
     const header = new HttpHeaders();
     this.http.post('http://localhost/database.php', header).subscribe(
       result => {
         console.log(result);
       }
-    );
+    ); */
   }
 }

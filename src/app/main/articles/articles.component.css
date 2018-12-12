@@ -16,4 +16,6 @@
   text-align: center;
 }
 
-
+.container-news {
+  overflow-x: auto;
+}

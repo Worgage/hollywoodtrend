@@ -1,37 +1,21 @@
-<div class="login" fxLayout="column" fxLayoutAlign="center center" >
-    
-      
-<mat-chip-list>
-  <form class="lg">  
-  <div class=utente fxLayout="row" fxLayoutAlign="space-between center"  >
-    <div class= nomeutente>
-    Utente
-    </div>
-    <div class=barrautente>
-   <mat-chip color="primary">
-    <mat-form-field class="utente">
-     <input matInput placeholder="Nome" value="">
-    </mat-form-field></mat-chip><br>
-  </div>
-  </div>
-  <div class=password>
-      Password <mat-chip color="primary">
-      <mat-form-field class="password">
-       <input type="password"  matInput placeholder="Password">
-    </mat-form-field></mat-chip>
-  </div>
-  </form>
-</mat-chip-list>
 
-<div class=button>
-    
-    <button mat-button>
-      <div class=font-button>
-          Login
-      </div>
-    </button>
-  
+<div class="login-dialog" fxLayout="column" fxLayoutAlign="space-around center">
+  <form class="login-form" (ngSubmit)="onSubmit()">
+    <p> Email </p>
+    <div class="user">
+    <mat-form-field class="utente"> <input matInput name="email"[(ngModel)]="email" value="">
+        </mat-form-field> {{email}}
+    </div>
+    <p> Password </p>
+    <div class=password>
+      <mat-form-field class="password">
+      <input type="password"  matInput [(ngModel)]="password" name="pass">
+    </mat-form-field> {{password}}
   </div>
+  <div mat-dialog-actions fxLayout="row" fxLayoutAlign="space-around center">
+      <button mat-button type="submit" >Login </button>
+  </div>
+</form>
 </div>
 
 

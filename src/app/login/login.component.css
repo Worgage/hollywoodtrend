@@ -1,33 +1,15 @@
-.login{
-    background-color:white;
-    margin-top:180px;
-    position:absolute;
-    right:0px;
-    left:0px;
-    
 
-    font-family:Arial, Helvetica, sans-serif;
-
-}
-
-
-.password{
-    margin-top:5px;
-}
-
-.barrautente{
-    postion:relative;
-    right:20px;
-    
-    background-color:white;
-}
-
-.button{
-    margin-top:10px;
-    position:relative;
-    right:-20px;
-    
-}
 .font-button{
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-dialog {
+  position: relative;
+}
+
+.login-form {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: 40px;
 }

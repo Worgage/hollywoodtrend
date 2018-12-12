@@ -3,6 +3,12 @@
   position: sticky;
 }
 
+
+.input-field {
+  background-color: white;
+  border-radius: 10px;
+}
+
 .head {
   color: white;
   z-index: 1;
@@ -19,8 +25,8 @@
 .search {
   position: absolute;
   right: 0;
-  margin: 30px;
   display: flex;
+  bottom: 0px;
 }
 
 .login {
