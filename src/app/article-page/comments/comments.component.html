@@ -1,0 +1,20 @@
+<div class="comments-container" fxLayout="column">
+  <div class="comments-row" fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let i of count(3)">
+    <mat-card class="comment" *ngFor="let i of count(3)">
+      <mat-card-header>
+        <mat-card-title>Matteo Cardelli</mat-card-title>
+        <mat-card-subtitle>User - Italian - 29</mat-card-subtitle>
+        <div class="score"> 100 </div>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Film carino. ho dormito. Però Bradley Cooper era bello e Lady Gaga canta bene.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <mat-icon>thumb_up</mat-icon>
+        <mat-icon>thumb_down</mat-icon>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
