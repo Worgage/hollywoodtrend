@@ -52,6 +52,7 @@ div.mat-form-field-infix {
 }
 
 .mat-divider {
+  width: 100%;
   border-top-width: 2px !important;
   border-color: black !important;
   margin-top: 10px !important;

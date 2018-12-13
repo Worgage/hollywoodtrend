@@ -14,8 +14,6 @@
 .category {
   display: block;
   text-align: center;
-}
-
-div.mat-chip-list-wrapper {
+  background-color: purple !important;
 }
 

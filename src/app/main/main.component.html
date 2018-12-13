@@ -2,9 +2,8 @@
 <div fxLayout="column" fxLayoutAlign="center center">
   <app-movie-header [articles]="[article]"></app-movie-header>
   <mat-divider></mat-divider>
-  <app-categories></app-categories>
-  <mat-divider class="line"></mat-divider>
   <app-articles [articles]="[article]"></app-articles>
-  <mat-divider class="line"></mat-divider>
+  <app-categories></app-categories>
+  <mat-divider></mat-divider>
   <app-reviews [movies]="[movie]"></app-reviews>
 </div>

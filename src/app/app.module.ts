@@ -59,6 +59,9 @@ import { CommentsComponent } from './article-page/comments/comments.component';
     MatSnackBarModule,
     MatCardModule
   ],
+  entryComponents: [
+    LoginComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

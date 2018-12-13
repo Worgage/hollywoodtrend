@@ -1,5 +1,7 @@
 <div class="container-news" fxLayout="row" fxLayoutAlign="space-evenly center">
+
     <div class="top-content" fxLayout="column">
+      <h2>Latest News</h2>
       <div class="news">
         <div class="articles-row" fxLayout="row" fxLayoutAlign="center center" *ngFor="let j of count(2)">
           <div fxLayout="column" *ngFor="let i of count(3)" routerLink="/article/{{articles[0].id}}">
