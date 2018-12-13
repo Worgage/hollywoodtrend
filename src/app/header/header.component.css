@@ -19,10 +19,7 @@
 }
 
 .logo {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  position: relative;
   margin-left: 30px;
 }
 
@@ -33,7 +30,7 @@
 }
 
 .login {
-  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .header {
@@ -46,5 +43,10 @@
   left: 0;
   right: 0;
   z-index: 1;
+  color: white;
+}
+
+button {
+  background-color: black;
   color: white;
 }

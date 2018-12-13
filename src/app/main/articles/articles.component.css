@@ -23,11 +23,14 @@
   margin: 15px;
 }
 
-
 .article {
-  margin: 10px
+  margin: 20px;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
 }
 
 button {
   float: right;
+  margin-bottom: 5px;
 }

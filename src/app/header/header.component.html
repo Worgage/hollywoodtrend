@@ -5,6 +5,11 @@
         <img src="https://assets.hollywoodreporter.com/assets/1543955557/images/brand/thr-logo-white.svg?24f3ab0efd33df610bcf">
       </a>
     </div>
+    <div class="tab">
+      <button mat-flat-button routerLink="/"> Home </button>
+      <button mat-flat-button routerLink="/featured"> Featured </button>
+      <button mat-flat-button routerLink="/movies"> Movies </button>
+    </div>
     <div class="search">
       <div class="search-content" fxLayout="row">
         <mat-form-field>
@@ -12,11 +17,7 @@
         </mat-form-field>
         <mat-icon>search</mat-icon>
         <div class="login">
-          <mat-chip-list>
-            <mat-chip color="primary" (click)="openLogin()">
-              Login
-            </mat-chip>
-          </mat-chip-list>
+          <button mat-flat-button (click)="openLogin()"> Login </button>
         </div>
       </div>
     </div>

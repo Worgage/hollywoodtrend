@@ -1,0 +1,27 @@
+<div class="movies-page">
+  <div class="main" fxLayout="row" fxLayoutAlign="space-around center" >
+    <div class="alph" fxLayout="column" fxLayoutAlign="space-around center" >
+      <button mat-mini-fab *ngFor="let l of alph()">  {{l | uppercase}} </button>
+    </div>
+    <div class="movies" fxLayout="column" fxLayoutAlign="space-around center" *ngIf="movies">
+      <h3>Latest Movies </h3>
+      <div fxLayout="row" *ngFor="let j of count(3); let y = index;">
+        <mat-card class="example-card" *ngFor="let i of count(6); let x = index;" routerLink="/movie/1">
+          <img mat-card-image *ngIf="movies[x]" [src]="movies[x + (y *6)]['poster_url']" alt="">
+          <mat-card-content>
+            <p  *ngIf="movies[x]">
+             {{movies[x + (y *6)]['title']}}
+            </p>
+          </mat-card-content>
+
+          <div class="score">
+            98
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <div class="more">
+    <button mat-stroked-button> More Movies </button>
+  </div>
+</div>

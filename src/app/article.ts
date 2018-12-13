@@ -1,8 +1,9 @@
 export class Article {
-  id: string;
+  id: number;
+  movie_id: number;
+  date: Date;
   title: string;
   subtext: string;
   img_url: string;
-  points: number;
   body: string;
 }

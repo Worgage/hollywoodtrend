@@ -4,12 +4,6 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 
-.rectangles {
-  width: 400px;
-  height: 250px;
-  margin: 4px;
-}
-
 div.mat-chip-list-wrapper {
   width: 100% !important;
   margin-left: 30px;
@@ -22,11 +16,6 @@ div.mat-form-field-infix {
   border-radius: 15px;
   color: black;
   text-align: center;
-}
-
-.header-image {
-  max-width: 400px;
-  max-height: 250px;
 }
 
 .mat-dialog-container {
@@ -61,9 +50,25 @@ div.mat-form-field-infix {
 
 .more {
   float: right;
+  margin-right: 20px;
 }
 
 .mat-card {
   background-color: black;
   color: white;
+}
+
+.score {
+  margin: 5px;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  background-color: purple;
+  width: 40px;
+  height: 40px;
+  display: table-cell;
+  text-align: center;
+  padding-top: 8px;
 }

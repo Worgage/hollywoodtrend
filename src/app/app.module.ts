@@ -26,6 +26,8 @@ import {FormsModule} from '@angular/forms';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { CommentsComponent } from './article-page/comments/comments.component';
+import { MoviesListComponent } from './movies-list/movies-list.component';
+import { FeaturedComponent } from './featured/featured.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { CommentsComponent } from './article-page/comments/comments.component';
     LoginComponent,
     ArticlePageComponent,
     FooterComponent,
-    CommentsComponent
+    CommentsComponent,
+    MoviesListComponent,
+    FeaturedComponent
   ],
   imports: [
     BrowserModule,

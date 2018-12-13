@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +8,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(private http: HttpClient) {
+  constructor() {
   }
 
-  ngOnInit(): void {
-    /*
-    const header = new HttpHeaders();
-    this.http.post('http://localhost/database.php', header).subscribe(
-      result => {
-        console.log(result);
-      }
-    ); */
-  }
+  ngOnInit(): void {}
 }

@@ -1,33 +1,26 @@
 
 <div class="container-reviews">
   <div fxLayout="column" fxLayoutAlign="space-evenly center">
-    <h3> Latest Reviews </h3>
-    <div fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let j of count(2)">
-      <div *ngFor="let i of count(4)">
-        <div class="review-container" fxLayout="column" fxFlexAlign="center center">
-          <mat-card class="review">
-            <img mat-card-image [src]="movies[0].poster_url"  alt="Photo of a Shiba Inu">
+    <h3> User Reviews </h3>
+    <div fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let _ of count(2); let i = index;">
+      <div *ngFor="let _ of count(5);  let j = index;">
+        <div class="review-container" fxLayout="column" fxFlexAlign="center center" *ngIf="movies">
+          <mat-card class="review" *ngIf="movies[j + (i*5)]" routerLink="/movie/{{movies[j + (i*5)].id}}">
+            <img mat-card-image [src]="movies[j+ (i*5)]['poster_url']"  alt="">
             <mat-card-content class="text-review">
               <p>
-                Gone Girl
+               {{movies[j+ (i*5)]['title']}}
               </p>
             </mat-card-content>
             <div class="score">
               78
             </div>
           </mat-card>
-          <!--
-          <div class="movie-poster">
-            <img class="poster" [src]="movies[0].poster_url">
-          </div>
-          <div class="movie-title">
-            <p> title </p>
-          </div> -->
         </div>
       </div>
     </div>
   </div>
   <div class="more">
-    <button mat-flat-button> More Reviews </button>
+    <button mat-flat-button routerLink="/movies"> More Reviews </button>
   </div>
   </div>

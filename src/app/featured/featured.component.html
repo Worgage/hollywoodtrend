@@ -1,0 +1,24 @@
+<div class="featured-page">
+<div class="articles" fxLayout="column" fxLayoutAlign="space-around center" >
+  <div fxLayout="row" *ngFor="let j of count(3)">
+    <mat-card class="example-card" *ngFor="let i of count(3)" routerLink="/movie/1">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title> A Star is Born </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="https://pmcvariety.files.wordpress.com/2018/09/a-star-is-born-3.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+          bred for hunting.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+  <div class="more">
+    <button mat-stroked-button> More Articles </button>
+  </div>
+</div>

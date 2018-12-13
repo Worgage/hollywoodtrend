@@ -1,0 +1,12 @@
+.featured-page {
+  margin-bottom: 100px;
+}
+
+.example-card {
+  color: black;
+  background-color: gainsboro;
+  max-width: 400px;
+  height: auto;
+  width: 100%;
+  margin: 20px;
+}

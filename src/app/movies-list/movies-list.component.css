@@ -1,0 +1,19 @@
+.movies-page {
+  min-height: 1000px;
+  margin-bottom: 100px;
+}
+
+.example-card {
+  margin: 20px;
+  max-width: 150px;
+}
+
+.mat-mini-fab {
+  background-color: purple;
+  margin: 5px;
+  color: white;
+}
+
+.alph {
+  margin-top: 50px;
+}
