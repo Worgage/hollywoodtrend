@@ -14,8 +14,16 @@
 .art-text {
   display: table-cell;
   text-align: center;
+  padding: 5px;
+  background-color: lightgray;
+  color: black;
 }
 
-.container-news {
-  overflow-x: auto;
+.articles-row {
+  margin: 15px;
+}
+
+
+.article {
+  margin: 10px
 }

@@ -9,7 +9,7 @@ import { ArticlesComponent } from './main/articles/articles.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
-  MatButtonModule,
+  MatButtonModule, MatCardModule,
   MatChipsModule,
   MatDialogModule,
   MatDividerModule,
@@ -25,6 +25,7 @@ import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { FooterComponent } from './footer/footer.component';
+import { CommentsComponent } from './article-page/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FooterComponent } from './footer/footer.component';
     ReviewsComponent,
     LoginComponent,
     ArticlePageComponent,
-    FooterComponent
+    FooterComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

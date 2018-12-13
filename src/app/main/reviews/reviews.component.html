@@ -1,16 +1,33 @@
 
 <div class="container-reviews">
   <div fxLayout="column" fxLayoutAlign="space-evenly center">
-    <h3> News </h3>
-    <div class="row" fxLayout="row" fxLayoutAlign="space-evenly center">
+    <h3> Latest Reviews </h3>
+    <div fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let j of count(2)">
       <div *ngFor="let i of count(4)">
-        <img class="poster" [src]="movies[0].poster_url">
+        <div class="review-container" fxLayout="column" fxFlexAlign="center center">
+          <mat-card class="review">
+            <img mat-card-image [src]="movies[0].poster_url"  alt="Photo of a Shiba Inu">
+            <mat-card-content class="text-review">
+              <p>
+                Gone Girl
+              </p>
+            </mat-card-content>
+            <div class="score">
+              78
+            </div>
+          </mat-card>
+          <!--
+          <div class="movie-poster">
+            <img class="poster" [src]="movies[0].poster_url">
+          </div>
+          <div class="movie-title">
+            <p> title </p>
+          </div> -->
+        </div>
       </div>
     </div>
-    <div class="row" fxLayout="row" fxLayoutAlign="space-evenly center">
-      <div *ngFor="let i of count(4)">
-        <img class="poster" [src]="movies[0].poster_url">
-      </div>
-    </div>
+  </div>
+  <div class="more">
+    <button mat-flat-button> More Reviews </button>
   </div>
   </div>

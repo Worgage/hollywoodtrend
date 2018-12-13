@@ -1,34 +1,23 @@
 <div class="container-news" fxLayout="row" fxLayoutAlign="space-evenly center">
     <div class="top-content" fxLayout="column">
       <div class="news">
-        <div class="articles" fxLayout="row" fxLayoutAlign="center center">
-          <div class="article" fxLayout="column" *ngFor="let i of count(3)">
-            <div class="art-text">
-              <img class="art-image" [src]="articles[0].img_url" alt="">
-            </div>
-            <div class="art-text">
-              {{articles[0].title | uppercase}}
-            </div>
-            <div class="art-second-text">
-              {{articles[0].subtext | lowercase}}
-            </div>
-          </div>
-        </div>
-        <div class="articles" fxLayout="row" fxLayoutAlign="center center">
-          <div class="article" fxLayout="column" *ngFor="let i of count(3)">
-            <div class="art-text">
-              <img class="art-image" [src]="articles[0].img_url" alt="">
-            </div>
-            <div class="art-text">
-              {{articles[0].title | uppercase}}
-            </div>
-            <div class="art-second-text">
-              {{articles[0].subtext | lowercase}}
-            </div>
+        <div class="articles-row" fxLayout="row" fxLayoutAlign="center center" *ngFor="let j of count(2)">
+          <div fxLayout="column" *ngFor="let i of count(3)" routerLink="/article/{{articles[0].id}}">
+           <mat-card class="article">
+            <img mat-card-image [src]="articles[0].img_url" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+                {{articles[0].title | uppercase}}
+              </p>
+            </mat-card-content>
+          </mat-card>
           </div>
         </div>
       </div>
     </div>
+  <div class="more">
+    <button mat-flat-button>More Articles</button>
+  </div>
   </div>
 
 

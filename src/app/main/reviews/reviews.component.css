@@ -1,9 +1,29 @@
 .container-reviews {
-  overflow-x: auto;
+  min-height: 1000px;
 }
 
-.row {
-  margin-top: 10px;
-  margin-bottom: 50px;
+.review {
+  margin: 20px;
+}
+
+.text-review {
+  text-align: center;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.score {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  background-color: purple;
+  width: 40px;
+  height: 40px;
+  display: table-cell;
+  text-align: center;
+  padding-top: 8px;
 }
 

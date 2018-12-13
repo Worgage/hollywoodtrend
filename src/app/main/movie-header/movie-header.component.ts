@@ -12,12 +12,11 @@ export class MovieHeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.articles);
-  }
+  ngOnInit() {}
 
   count(i) {
     return new Array(i);
   }
+
 
 }
