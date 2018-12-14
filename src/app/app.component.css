@@ -23,5 +23,6 @@
   margin-right: 100px;
   border-style: solid;
   width: auto;
+  min-width: 1200px;
   max-width: 1300px !important;
 }

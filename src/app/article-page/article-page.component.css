@@ -10,7 +10,6 @@
 
 .article-body {
   max-width: 800px;
-  min-height: 300px;
 }
 
 .article-author{
@@ -18,9 +17,6 @@
   margin-left: 30px;
 }
 
-.article-title {
-  margin-left: 30px;
-}
 
 .article-body {
   margin-left: 30px;
@@ -34,6 +30,19 @@
   min-height: 700px;
 }
 
-h1 {
-  margin: 30px;
+h1, h2, h3 {
+  margin-left: 30px;
+}
+
+.box {
+  margin-left: 30px;
+  white-space: nowrap;
+  width: 60%;
+  border-collapse: separate;
+  border-spacing: 5px 10px;
+}
+
+
+.info-section {
+  margin-top: 10px;
 }

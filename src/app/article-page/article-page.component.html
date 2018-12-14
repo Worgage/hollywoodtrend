@@ -1,14 +1,28 @@
 <div class="article-container">
   <div class="article-content" fxLayout="column">
     <div class="article-path">
-      <p routerLink="/"> Home > Article</p>
+      <p routerLink="/"> Home </p>
     </div>
     <div *ngIf="article">
+      <h3> {{movie.title | uppercase}}</h3>
+      <mat-divider></mat-divider>
       <div class="article-image" fxLayout="row" fxLayoutAlign="center center" >
         <img class="art-image" [src]="article.img_url" alt="">
       </div>
+      <div class="info-section">
+        <div class="info-box">
+          <table class="box">
+            <tr> <th> Name </th> <th> Year </th> <th> Director </th><th> Durata </th> <th> Country</th><th> Genres </th><th> Distributed by</th></tr>
+            <tr> <td> {{movie.title}}</td> <td> {{movie.date | slice:0:4}}</td> <td> {{movie.director}}</td> <td> 120m</td></tr>
+            <tr><th> Cast </th></tr>
+            <tr><td colspan="6"> io, tu , loro , egli, noi, voi, essi</td></tr>
+            <tr><th>Plot</th></tr>
+            <tr><td colspan="6"> In questo film il protagonista non esiste</td></tr>
+          </table>
+        </div>
+      </div>
       <div class="article-title">
-        <h2> {{article.title}}</h2>
+        <h3> Our review </h3>
       </div>
       <mat-divider></mat-divider>
       <div class="article-author" *ngIf="movie">
@@ -20,7 +34,7 @@
     </div>
     </div>
 
-  <h1> User Reviews</h1>
+  <h3> User Reviews</h3>
   <mat-divider class="line"></mat-divider>
   <app-comments ></app-comments>
 </div>
