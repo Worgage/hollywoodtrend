@@ -3,7 +3,7 @@
 }
 
 .review {
-  margin: 20px;
+  margin: 10px;
   max-width: 200px;
 }
 
@@ -20,4 +20,8 @@ button {
   margin: 20px;
 }
 
+.image-review {
+  width: 200px;
+  height: 300px;
+}
 

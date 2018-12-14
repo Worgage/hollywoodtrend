@@ -6,7 +6,7 @@
       <div *ngFor="let _ of count(5);  let j = index;">
         <div class="review-container" fxLayout="column" fxFlexAlign="center center" *ngIf="movies">
           <mat-card class="review" *ngIf="movies[j + (i*5)]" routerLink="/movie/{{movies[j + (i*5)].id}}">
-            <img mat-card-image [src]="movies[j+ (i*5)]['poster_url']"  alt="">
+            <img mat-card-image class="image-review" [src]="movies[j+ (i*5)]['poster_url']"  alt="">
             <mat-card-content class="text-review">
               <p>
                {{movies[j+ (i*5)]['title']}}
