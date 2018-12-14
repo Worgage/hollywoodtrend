@@ -6,7 +6,7 @@
         <div class="articles-row" fxLayout="row" fxLayoutAlign="center center" *ngFor="let _ of count(2)">
           <div fxLayout="column" *ngFor="let _ of count(4); let i = index;" >
            <mat-card class="article" routerLink="/movie/{{articles[i].id}}" *ngIf="articles[i]">
-            <img mat-card-image [src]="articles[i].img_url" alt="">
+            <img mat-card-image class="article-image" [src]="articles[i].img_url" alt="">
             <mat-card-content>
               <p>
                 {{articles[i].subtext | uppercase}}
