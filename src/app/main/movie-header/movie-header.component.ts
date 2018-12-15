@@ -10,7 +10,7 @@ import {CommentsService} from '../../comments.service';
 })
 export class MovieHeaderComponent implements OnInit {
 
- articles: Movie[];
+ movies: Movie[];
 
   constructor(private http: HttpClient, private comments: CommentsService) { }
 
@@ -19,7 +19,7 @@ export class MovieHeaderComponent implements OnInit {
     header.append('Content-type', 'text/plain');
     this.http.post<Movie[]>('http://localhost/movies.php', header).subscribe(
       result =>  {
-        this.articles = result;
+        this.movies = result;
       }
     );
   }
@@ -30,6 +30,10 @@ export class MovieHeaderComponent implements OnInit {
 
   getPoints(id) {
     return this.comments.getPoints(id);
+  }
+
+  getColor(id) {
+    return this.comments.getColor(id);
   }
 
 

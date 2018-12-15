@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Article} from '../../article';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {CommentsService} from '../../comments.service';
 
 @Component({
   selector: 'app-articles',
@@ -11,7 +12,7 @@ export class ArticlesComponent implements OnInit {
 
   articles: Article[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private comments: CommentsService) { }
 
   ngOnInit() {
     const header = new HttpHeaders();
@@ -23,6 +24,14 @@ export class ArticlesComponent implements OnInit {
 
   count(i) {
     return new Array(i);
+  }
+
+  getPoints(id) {
+    return this.comments.getPoints(id);
+  }
+
+  getColor(id) {
+    return this.comments.getColor(id);
   }
 
 }

@@ -2,11 +2,11 @@
   <h3>Top Movies </h3>
   <div class="movie-header-container" fxLayout="row" fxLayoutAlign="center center" >
       <div class="header-rectangle" *ngFor="let _ of count(6); let i = index;">
-        <div *ngIf="articles">
-          <img *ngIf="articles[i].poster_url" class="header-image" [src]="articles[i].poster_url"
-               alt="" routerLink="/movie/{{articles[i].id}}">
-          <div class="header-text" *ngIf="articles[i].title"> {{articles[i].title | uppercase}} </div>
-          <div class="score">{{getPoints(articles[i].id)}} </div>
+        <div *ngIf="movies">
+          <img *ngIf="movies[i].poster_url" class="header-image" [src]="movies[i].poster_url"
+               alt="" routerLink="/movie/{{movies[i].id}}">
+          <div class="header-text" *ngIf="movies[i].title"> {{movies[i].title | uppercase}} </div>
+          <div class="score" [ngStyle]="getColor(movies[i].id)">{{getPoints(movies[i].id)}} </div>
         </div>
         </div>
   </div>

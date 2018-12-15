@@ -1,10 +1,14 @@
-<div class="article-container">
-  <div class="article-content" fxLayout="column">
+<div class="article-container" [ngStyle]="background()">
+  <div fxLayout="column">
     <div class="article-path">
       <p routerLink="/"> Home </p>
     </div>
       <div class="info-section" *ngIf="movie">
-        <h3> {{movie.title | uppercase}}</h3>
+        <span class="point"> 42 </span>
+        <div class="title-row">
+          <h3> {{movie.title | uppercase}}</h3>
+          <button *ngIf="isLogged()" class="rate-button" mat-flat-button> Rate this movie </button>
+        </div>
         <mat-divider></mat-divider>
         <div class="info-box" fxLayout="row">
           <div class="poster-box">
@@ -31,12 +35,12 @@
       <div class="article-image" fxLayout="row" fxLayoutAlign="center center" >
         <img class="art-image" [src]="article.img_url" alt="">
       </div>
-      <div class="article-body" [innerHTML]="article.body">
+      <div class="article-body" [innerHTML]="getBody()">
       </div>
     </div>
     </div>
 
   <h3> User Reviews</h3>
   <mat-divider class="line"></mat-divider>
-  <app-comments ></app-comments>
+  <app-comments [id]="id"></app-comments>
 </div>

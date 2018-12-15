@@ -37,21 +37,19 @@ export class CommentsService implements OnInit {
     return Math.round(score / this.comments[id].length);
   }
 
-  getColor(id) { /*
-    overloadImg(id: string) {
+  getColor(id) {
+    const perc =  this.getPoints(id);
+    if ( perc >= 85) { return {'background-color': 'rgb(92, 153, 68)'}; }
+    if ( perc < 85 && perc >= 60) { return {'background-color': 'rgb(235, 194, 61)'}; }
+    if ( perc < 60 ) { return {'background-color': 'rgb(255, 105, 96)' }; }
+    return {'background-color': 'white'};
+  }
 
-      if ( this.percentages[id] >= 90) {
-        return {color: 'red'};
-      }
-      if ( this.percentages[id] < 90 && this.percentages[id] >= 70) {
-        return {color: 'rgb(218, 187, 17)'};
-      }
-
-      if ( this.percentages[id] > 70 ) {
-        return {color: 'green'};
-      }
-
-      return {color: 'green'};
-    }*/
+  getBackgroundColor(id) {
+    const perc =  this.getPoints(id);
+    if ( perc >= 85) { return {'background-color': 'darkseagreen'}; }
+    if ( perc < 85 && perc >= 60) { return {'background-color': 'goldenrod'}; }
+    if ( perc < 60 ) { return {'background-color': 'lightcoral' }; }
+    return {'background-color': 'white'};
   }
 }

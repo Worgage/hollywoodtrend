@@ -1,11 +1,13 @@
 .article-container {
   height: 100%;
+  min-height: 1000px;
   position: relative;
 }
 
 .art-image {
   max-width: 1000px;
   max-height: 600px;
+  border-style: solid;
 }
 
 .article-body {
@@ -24,7 +26,8 @@
 }
 
 .article-path {
-  margin: 30px;
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 .comments-container {
@@ -45,7 +48,6 @@ h1, h2, h3 {
 
 
 .info-section {
-  margin-top: 10px;
   margin-left: 30px;
 }
 
@@ -56,4 +58,27 @@ h1, h2, h3 {
 
 .poster-box {
   margin-left: 30px;
+  border-style: solid;
 }
+
+.point {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 30px;
+  font-size: 50px;
+}
+
+.title-row {
+  position: relative;
+  height: 100%;
+}
+
+.rate-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 30px;
+}
+
+

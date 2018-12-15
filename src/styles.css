@@ -72,3 +72,8 @@ div.mat-form-field-infix {
   text-align: center;
   padding-top: 8px;
 }
+
+img {
+  max-width: 1000px;
+  height: auto;
+}

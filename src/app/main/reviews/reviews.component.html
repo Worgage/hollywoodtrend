@@ -12,7 +12,7 @@
                {{movies[j+ (i*5)]['title']}}
               </p>
             </mat-card-content>
-            <div class="score">
+            <div class="score" [ngStyle]="getColor(movies[j + (i *6)]['id'])">
               {{getPoints(movies[j+ (i*5)]['id'])}}
             </div>
           </mat-card>

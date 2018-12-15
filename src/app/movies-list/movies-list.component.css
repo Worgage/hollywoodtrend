@@ -1,6 +1,7 @@
 .movies-page {
   min-height: 1000px;
   margin-bottom: 100px;
+  min-width: 1200px;
 }
 
 .example-card {
@@ -16,4 +17,9 @@
 
 .alph {
   margin-top: 50px;
+}
+
+
+.movies {
+  min-width: 1200px;
 }

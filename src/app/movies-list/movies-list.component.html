@@ -14,8 +14,7 @@
              {{movies[x + (y *6)]['title']}}
             </p>
           </mat-card-content>
-
-          <div class="score" [ngStyle]="">
+          <div class="score" [ngStyle]="getColor(movies[x + (y *6)]['id'])">
             {{getComments(movies[x + (y *6)]['id'])}}
           </div>
         </mat-card>

@@ -67,7 +67,7 @@ import {CommentsService} from './comments.service';
   entryComponents: [
     LoginComponent
   ],
-  providers: [CommentsService],
+  providers: [CommentsService, LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

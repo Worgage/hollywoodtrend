@@ -34,4 +34,8 @@ export class MoviesListComponent implements OnInit {
     return this.comments.getPoints(id);
   }
 
+  getColor(id) {
+    return this.comments.getColor(id);
+  }
+
 }

@@ -4,7 +4,6 @@
     <div *ngFor="let _ of count(3); let i = index;">
       <mat-card class="featured-article" *ngIf="articles[i + (j*3)]" routerLink="/movie/{{articles[i + (j*3)]?.movie_id}}">
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title> {{articles[i + (j*3)].title}} </mat-card-title>
         </mat-card-header>
         <img mat-card-image [src]="articles[i + (j*3)].img_url" alt="Photo of a Shiba Inu">

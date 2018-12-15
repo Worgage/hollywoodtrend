@@ -17,7 +17,8 @@
         </mat-form-field>
         <mat-icon>search</mat-icon>
         <div class="login">
-          <button mat-flat-button (click)="openLogin()"> Login </button>
+          <button *ngIf="!isLogged()" mat-flat-button (click)="openLogin()"> Login </button>
+          <span *ngIf="isLogged()"> {{getName()}} </span>
         </div>
       </div>
     </div>
