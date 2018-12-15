@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Article} from '../../article';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Movie} from '../../movie';
 
 @Component({
   selector: 'app-articles',

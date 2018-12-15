@@ -28,6 +28,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CommentsComponent } from './article-page/comments/comments.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { FeaturedComponent } from './featured/featured.component';
+import {CommentsService} from './comments.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { FeaturedComponent } from './featured/featured.component';
   entryComponents: [
     LoginComponent
   ],
-  providers: [],
+  providers: [CommentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

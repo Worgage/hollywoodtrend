@@ -3,14 +3,13 @@
     <div class="article-path">
       <p routerLink="/"> Home </p>
     </div>
-    <div *ngIf="article">
-      <h3> {{movie.title | uppercase}}</h3>
-      <mat-divider></mat-divider>
-      <div class="article-image" fxLayout="row" fxLayoutAlign="center center" >
-        <img class="art-image" [src]="article.img_url" alt="">
-      </div>
-      <div class="info-section">
-        <div class="info-box">
+      <div class="info-section" *ngIf="movie">
+        <h3> {{movie.title | uppercase}}</h3>
+        <mat-divider></mat-divider>
+        <div class="info-box" fxLayout="row">
+          <div class="poster-box">
+            <img class="poster" [src]="movie.poster_url" alt="">
+          </div>
           <table class="box">
             <tr> <th> Name </th> <th> Year </th> <th> Director </th><th> Durata </th> <th> Country</th><th> Genres </th><th> Distributed by</th></tr>
             <tr> <td> {{movie.title}}</td> <td> {{movie.date | slice:0:4}}</td> <td> {{movie.director}}</td> <td> 120m</td></tr>
@@ -21,6 +20,7 @@
           </table>
         </div>
       </div>
+    <div *ngIf="article">
       <div class="article-title">
         <h3> Our review </h3>
       </div>
@@ -28,8 +28,10 @@
       <div class="article-author" *ngIf="movie">
         <p> Pubblicato da ciao il ciao giorno 20 sul film {{movie.title}}</p>
       </div>
-      <div class="article-body">
-       {{article.body}}
+      <div class="article-image" fxLayout="row" fxLayoutAlign="center center" >
+        <img class="art-image" [src]="article.img_url" alt="">
+      </div>
+      <div class="article-body" [innerHTML]="article.body">
       </div>
     </div>
     </div>

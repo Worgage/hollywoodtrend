@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Movie} from '../../movie';
 import {HttpHeaders} from '@angular/common/http';
 import {HttpClient} from '@angular/common/http';
+import {CommentsService} from '../../comments.service';
 
 @Component({
   selector: 'app-reviews',
@@ -12,7 +13,7 @@ export class ReviewsComponent implements OnInit {
 
   movies: Movie[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private comments: CommentsService) { }
 
   ngOnInit() {
     const header = new HttpHeaders();
@@ -24,6 +25,10 @@ export class ReviewsComponent implements OnInit {
 
   count(i) {
     return new Array(i);
+  }
+
+  getPoints(id) {
+    return this.comments.getPoints(id);
   }
 
 }

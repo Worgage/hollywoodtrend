@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Movie} from '../../movie';
+import {CommentsService} from '../../comments.service';
 
 @Component({
   selector: 'app-movie-header',
@@ -10,26 +11,12 @@ import {Movie} from '../../movie';
 export class MovieHeaderComponent implements OnInit {
 
  articles: Movie[];
- comments: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private comments: CommentsService) { }
 
   ngOnInit() {
     const header = new HttpHeaders();
-    this.comments = {};
     header.append('Content-type', 'text/plain');
-    this.http.post<[]>('http://localhost/comments.php', header).subscribe(
-      result =>  {
-        result.forEach(
-          comment => {
-            if (!this.comments[comment['movie_id']]) {
-              this.comments[comment['movie_id']] = [];
-            }
-            this.comments[comment['movie_id']].push(comment['points']);
-          }
-        );
-      }
-    );
     this.http.post<Movie[]>('http://localhost/movies.php', header).subscribe(
       result =>  {
         this.articles = result;
@@ -42,12 +29,7 @@ export class MovieHeaderComponent implements OnInit {
   }
 
   getPoints(id) {
-    let score = 0;
-    if (!this.comments[id]) {
-      return 0;
-    }
-    this.comments[id].forEach( voto => score += parseInt(voto, 10));
-    return Math.round(score / this.comments[id].length);
+    return this.comments.getPoints(id);
   }
 
 

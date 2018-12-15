@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
 import {HttpClient} from '@angular/common/http';
+import {CommentsService} from '../comments.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -11,7 +12,7 @@ export class MoviesListComponent implements OnInit {
 
   movies: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private comments: CommentsService) { }
 
   ngOnInit() {
     const header = new HttpHeaders();
@@ -27,6 +28,10 @@ export class MoviesListComponent implements OnInit {
 
   alph() {
     return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'z'];
+  }
+
+  getComments(id) {
+    return this.comments.getPoints(id);
   }
 
 }
