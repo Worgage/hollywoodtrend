@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material';
-import {LoginComponent} from '../login/login.component';
+import {LoginComponent} from './login/login.component';
 import {LoginService} from '../login.service';
 
 @Component({
@@ -26,7 +26,7 @@ export class HeaderComponent {
   }
 
   getName() {
-    this.ref.close();
+    if (this.ref) { this.ref.close(); }
     return this.login.getName();
   }
 

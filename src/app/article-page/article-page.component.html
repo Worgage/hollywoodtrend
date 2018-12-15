@@ -7,7 +7,7 @@
         <span class="point"> 42 </span>
         <div class="title-row">
           <h3> {{movie.title | uppercase}}</h3>
-          <button *ngIf="isLogged()" class="rate-button" mat-flat-button> Rate this movie </button>
+          <button *ngIf="isLogged()" class="rate-button" mat-flat-button (click)="rate()"> Rate this movie </button>
         </div>
         <mat-divider></mat-divider>
         <div class="info-box" fxLayout="row">
@@ -24,7 +24,7 @@
           </table>
         </div>
       </div>
-    <div *ngIf="article">
+    <div *ngIf="article" class="our-review-container">
       <div class="article-title">
         <h3> Our review </h3>
       </div>
@@ -39,8 +39,10 @@
       </div>
     </div>
     </div>
-
+<div class="user-reviews">
   <h3> User Reviews</h3>
   <mat-divider class="line"></mat-divider>
   <app-comments [id]="id"></app-comments>
+</div>
+
 </div>

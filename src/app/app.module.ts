@@ -14,14 +14,14 @@ import {
   MatDialogModule,
   MatDividerModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatSliderModule,
   MatSnackBarModule
 } from '@angular/material';
 import { CategoriesComponent } from './main/categories/categories.component';
 import { ReviewsComponent } from './main/reviews/reviews.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
-import {LoginComponent} from './login/login.component';
+import {LoginComponent} from './header/login/login.component';
 import {FormsModule} from '@angular/forms';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { FooterComponent } from './footer/footer.component';
@@ -29,6 +29,7 @@ import { CommentsComponent } from './article-page/comments/comments.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { FeaturedComponent } from './featured/featured.component';
 import {CommentsService} from './comments.service';
+import { ReviewComponent } from './article-page/review/review.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {CommentsService} from './comments.service';
     FooterComponent,
     CommentsComponent,
     MoviesListComponent,
-    FeaturedComponent
+    FeaturedComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -62,10 +64,12 @@ import {CommentsService} from './comments.service';
     MatButtonModule,
     MatDialogModule,
     MatSnackBarModule,
-    MatCardModule
+    MatCardModule,
+    MatSliderModule
   ],
   entryComponents: [
-    LoginComponent
+    LoginComponent,
+    ReviewComponent
   ],
   providers: [CommentsService, LoginComponent],
   bootstrap: [AppComponent]

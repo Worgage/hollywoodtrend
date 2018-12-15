@@ -7,6 +7,8 @@ import {Movie} from '../movie';
 import {CommentsService} from '../comments.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {LoginService} from '../login.service';
+import {MatDialog} from '@angular/material';
+import {ReviewComponent} from './review/review.component';
 
 @Component({
   selector: 'app-article-page',
@@ -24,7 +26,8 @@ export class ArticlePageComponent implements OnInit {
     private http: HttpClient,
     private comments: CommentsService,
     private sanitizer: DomSanitizer,
-    private login: LoginService,) { }
+    public dialog: MatDialog,
+    private login: LoginService) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
@@ -54,6 +57,13 @@ export class ArticlePageComponent implements OnInit {
 
   isLogged() {
     return this.login.isLogged();
+  }
+
+  rate() {
+    this.dialog.open(ReviewComponent, {
+      width: '500px',
+      height: '500px'
+    });
   }
 
 }

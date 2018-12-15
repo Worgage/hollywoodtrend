@@ -1,5 +1,6 @@
 <div class="featured-page">
 <div class="articles" fxLayout="column" fxLayoutAlign="space-around center" >
+  <h2> Our Reviews </h2>
   <div fxLayout="row" *ngFor="let _ of count(3); let j = index;">
     <div *ngFor="let _ of count(3); let i = index;">
       <mat-card class="featured-article" *ngIf="articles[i + (j*3)]" routerLink="/movie/{{articles[i + (j*3)]?.movie_id}}">

@@ -13,18 +13,20 @@
 
 .body {
   background-color: black;
-  height: auto;
+  min-height: 1200px;
+  min-width: 1300px;
+  width: auto;
+  height: 100%;
 }
 
 
 .main {
   display: block;
   background-color: white;
-  margin-left: 100px;
-  margin-right: 100px;
   border-style: solid;
   width: auto;
-  min-width: 1200px;
-  max-width: 1300px !important;
-  position: relative;
+  height: 100%;
+  min-height: 1200px;
+  max-width: 1300px;
+  margin: auto;
 }
