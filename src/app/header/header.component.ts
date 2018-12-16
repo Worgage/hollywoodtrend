@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material';
 import {LoginComponent} from './login/login.component';
 import {LoginService} from '../login.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +12,9 @@ import {LoginService} from '../login.service';
 export class HeaderComponent {
 
   private ref: any;
+  search: string;
 
-  constructor(public dialog: MatDialog, private login: LoginService) { }
+  constructor(public dialog: MatDialog, private login: LoginService, private router: Router) { }
 
   openLogin() {
     this.ref = this.dialog.open(LoginComponent, {
@@ -28,6 +30,12 @@ export class HeaderComponent {
   getName() {
     if (this.ref) { this.ref.close(); }
     return this.login.getName();
+  }
+
+  go() {
+    if (this.search !== '') {
+      this.router.navigate(['/movies/0/' + this.search]);
+    }
   }
 
 }

@@ -17,7 +17,6 @@ export class CommentsComponent implements OnInit {
   ngOnInit() {
     this.movie_comments = [];
     this.movie_comments = this.comments.getComments(parseInt(this.id, 10));
-    console.log(this.movie_comments);
   }
 
   count(i) {

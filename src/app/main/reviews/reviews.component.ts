@@ -1,8 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Movie} from '../../movie';
-import {HttpHeaders} from '@angular/common/http';
-import {HttpClient} from '@angular/common/http';
 import {CommentsService} from '../../comments.service';
+import {DatabaseService} from '../../database.service';
 
 @Component({
   selector: 'app-reviews',
@@ -13,14 +12,10 @@ export class ReviewsComponent implements OnInit {
 
   movies: Movie[];
 
-  constructor(private http: HttpClient, private comments: CommentsService) { }
+  constructor(private database: DatabaseService, private comments: CommentsService) { }
 
   ngOnInit() {
-    const header = new HttpHeaders();
-    header.append('Content-type', 'text/plain');
-    this.http.post<Movie[]>('http://localhost/movies.php', header).subscribe(
-      result => this.movies = result
-    );
+    this.movies = this.database.getMovies(0, 11);
   }
 
   count(i) {

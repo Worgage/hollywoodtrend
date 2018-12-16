@@ -13,9 +13,9 @@
     <div class="search">
       <div class="search-content" fxLayout="row">
         <mat-form-field>
-          <input matInput >
+          <input name="search" [(ngModel)]="search" matInput (keyup.enter)="go()" >
         </mat-form-field>
-        <mat-icon>search</mat-icon>
+        <mat-icon (click)="go()">search</mat-icon>
         <div class="login">
           <button *ngIf="!isLogged()" mat-flat-button (click)="openLogin()"> Login </button>
           <span *ngIf="isLogged()"> {{getName()}} </span>

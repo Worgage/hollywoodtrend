@@ -8,9 +8,13 @@ import {MoviesListComponent} from './movies-list/movies-list.component';
 const routes: Routes = [
   { path: '', component: MainComponent  },
   { path: 'movie/:id', component: ArticlePageComponent },
-  {path: 'featured', redirectTo: 'featured/0'},
+  {path: 'movie', pathMatch: 'full', redirectTo: 'movie/0'},
   { path: 'featured/:page', component: FeaturedComponent },
-  { path: 'movies', component: MoviesListComponent }
+  {path: 'featured', redirectTo: 'featured/0'},
+  { path: 'movies/:page/:search', component: MoviesListComponent },
+  { path: 'movies/:page',  component: MoviesListComponent },
+  { path: 'movies', pathMatch: 'full', redirectTo: 'movies/0' },
+  { path: '*', redirectTo: '' },
 ];
 
 @NgModule({

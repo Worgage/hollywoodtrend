@@ -6,6 +6,7 @@ export class Movie {
   director: string;
   country: string;
   genre: string;
+  plot: string;
   cast: string;
   distributed: string;
   length: number;

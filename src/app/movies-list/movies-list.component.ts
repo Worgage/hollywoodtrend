@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {HttpHeaders} from '@angular/common/http';
 import {HttpClient} from '@angular/common/http';
 import {CommentsService} from '../comments.service';
+import {ActivatedRoute} from '@angular/router';
+import {DatabaseService} from '../database.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -11,16 +13,19 @@ import {CommentsService} from '../comments.service';
 export class MoviesListComponent implements OnInit {
 
   movies: any;
+  page: number;
 
-  constructor(private http: HttpClient, private comments: CommentsService) { }
+  constructor(private database: DatabaseService, private comments: CommentsService, private params: ActivatedRoute) { }
 
   ngOnInit() {
-    const header = new HttpHeaders();
-    header.append('Content-type', 'text/plain');
-    this.http.post('http://localhost/movies.php', header).subscribe(
-      result => {this.movies = result; }
+    this.params.params.subscribe(params => {
+      this.movies = [];
+        this.page = parseInt( params['page'], 10);
+        const search =  params['search'];
+        this.movies =  search ? this.database.searchMovie(search) : this.database.getMovies( 20 * this.page , 20 * (this.page) + 20 );
+      }
     );
-  }
+    }
 
   count(i) {
     return new Array(i);

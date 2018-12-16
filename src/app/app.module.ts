@@ -14,7 +14,7 @@ import {
   MatDialogModule,
   MatDividerModule,
   MatIconModule,
-  MatInputModule, MatSliderModule,
+  MatInputModule, MatProgressBarModule, MatSliderModule,
   MatSnackBarModule
 } from '@angular/material';
 import { CategoriesComponent } from './main/categories/categories.component';
@@ -66,7 +66,8 @@ import {DatabaseService} from './database.service';
     MatDialogModule,
     MatSnackBarModule,
     MatCardModule,
-    MatSliderModule
+    MatSliderModule,
+    MatProgressBarModule
   ],
   entryComponents: [
     LoginComponent,

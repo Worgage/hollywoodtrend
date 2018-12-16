@@ -1,7 +1,8 @@
+<mat-progress-bar *ngIf="loading"></mat-progress-bar>
 <div class="article-container" [ngStyle]="background()">
   <div fxLayout="column">
     <div class="article-path">
-      <p routerLink="/"> Home </p>
+      <p (click)="back()">Back </p>
     </div>
       <div class="info-section" *ngIf="movie">
         <span class="point"> {{getPoints()}} </span>
@@ -23,7 +24,7 @@
             <tr><th> Cast </th></tr>
             <tr><td colspan="6" [innerHTML]="movie.cast"></td></tr>
             <tr><th>Plot</th></tr>
-            <tr><td colspan="6">trama</td></tr>
+            <tr><td colspan="6">{{movie.plot}}</td></tr>
           </table>
         </div>
       </div>

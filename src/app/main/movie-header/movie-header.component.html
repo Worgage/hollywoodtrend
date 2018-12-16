@@ -1,9 +1,9 @@
 <div class="header-section" fxLayout="column" >
-  <h3>Top Movies </h3>
+  <h3>Latest Movies </h3>
   <div class="movie-header-container" fxLayout="row" fxLayoutAlign="center center" >
       <div class="header-rectangle" *ngFor="let _ of count(6); let i = index;">
-        <div *ngIf="movies">
-          <img *ngIf="movies[i].poster_url" class="header-image" [src]="movies[i].poster_url"
+        <div *ngIf="movies[i]">
+          <img class="header-image" [src]="movies[i].poster_url"
                alt="" routerLink="/movie/{{movies[i].id}}">
           <div class="header-text" *ngIf="movies[i].title"> {{movies[i].title | uppercase}} </div>
           <div class="score" [ngStyle]="getColor(movies[i].id)">{{getPoints(movies[i].id)}} </div>

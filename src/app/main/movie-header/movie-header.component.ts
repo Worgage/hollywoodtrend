@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Movie} from '../../movie';
 import {CommentsService} from '../../comments.service';
+import {DatabaseService} from '../../database.service';
 
 @Component({
   selector: 'app-movie-header',
@@ -12,16 +13,10 @@ export class MovieHeaderComponent implements OnInit {
 
  movies: Movie[];
 
-  constructor(private http: HttpClient, private comments: CommentsService) { }
+  constructor(private database: DatabaseService, private comments: CommentsService) { }
 
   ngOnInit() {
-    const header = new HttpHeaders();
-    header.append('Content-type', 'text/plain');
-    this.http.post<Movie[]>('http://localhost/movies.php', header).subscribe(
-      result =>  {
-        this.movies = result;
-      }
-    );
+   this.movies = this.database.getMovies(0, 6);
   }
 
   count(i) {

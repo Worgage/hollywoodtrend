@@ -3,6 +3,10 @@
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+body {
+  font-size: 15px;
+  font-family: Verdana, serif;
+}
 
 div.mat-chip-list-wrapper {
   width: 100% !important;
@@ -76,4 +80,8 @@ div.mat-form-field-infix {
 img {
   max-width: 1000px;
   height: auto;
+}
+
+.bar {
+  background-color: red !important;
 }

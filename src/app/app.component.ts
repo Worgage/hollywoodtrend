@@ -8,7 +8,7 @@ import {DatabaseService} from './database.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'HollywoodTrend';
 
   constructor(private comments: CommentsService, private database: DatabaseService) {
   }
@@ -16,5 +16,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.comments.ngOnInit();
     this.database.ngOnInit();
+    setTimeout( nothing => {} , 2000);
+  }
+
+  isLoaded() {
+    return this.database.isLoaded();
   }
 }
