@@ -30,6 +30,7 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
 import { FeaturedComponent } from './featured/featured.component';
 import {CommentsService} from './comments.service';
 import { ReviewComponent } from './article-page/review/review.component';
+import {DatabaseService} from './database.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { ReviewComponent } from './article-page/review/review.component';
     CommentsComponent,
     MoviesListComponent,
     FeaturedComponent,
-    ReviewComponent
+    ReviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +72,7 @@ import { ReviewComponent } from './article-page/review/review.component';
     LoginComponent,
     ReviewComponent
   ],
-  providers: [CommentsService, LoginComponent],
+  providers: [CommentsService, LoginComponent, DatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

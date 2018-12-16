@@ -1,13 +1,15 @@
 <h3 mat-dialog-title> Write your review </h3>
+<form (ngSubmit)="onSubmit()">
 <div mat-dialog-content fxFlexAlign="column">
   <div class="slider">
-    <mat-slider min="10" max="100" step="5" value="50" #vote ></mat-slider> {{vote.value}}
+    <mat-slider min="10" max="100" step="5" value="50" #vote [(ngModel)]="points" name="points"></mat-slider> {{vote.value}}
   </div>
   Leave a comment
   <mat-form-field class="example-full-width">
-    <textarea matInput></textarea>
+    <textarea matInput [(ngModel)]="comment" name="comment"></textarea>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-flat-button> Confirm </button>
+  <button mat-flat-button type="submit"> Confirm </button>
 </div>
+</form>

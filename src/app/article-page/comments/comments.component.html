@@ -1,17 +1,20 @@
 <div class="comments-container" fxLayout="column">
   <div class="comments-row" fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let _ of count(3); let j = index;">
     <div  *ngFor="let _ of count(3); let i = index;">
-      <mat-card class="comment" *ngIf="comments[i +(j*3)]">
+      <mat-card class="comment" *ngIf="movie_comments[i +(j*3)]">
         <mat-card-header >
-          <mat-card-title class="title">Matteo Cardelli</mat-card-title>
+          <mat-card-title class="title">
+            {{movie_comments[i +(j*3)]['name'] }}
+            {{movie_comments[i +(j*3)]['surname']}}
+          </mat-card-title>
           <mat-card-subtitle>Italian - 29</mat-card-subtitle>
-          <div class="score" [ngStyle]="getColor(comments[i +(j*3)]['points'])">
-            {{comments[i +(j*3)]['points']}}
+          <div class="score" [ngStyle]="getColor(movie_comments[i +(j*3)]['points'])">
+            {{movie_comments[i +(j*3)]['points']}}
           </div>
         </mat-card-header>
         <mat-card-content>
           <p>
-            {{comments[i +(j*3)]['comment']}}
+            {{movie_comments[i +(j*3)]['comment']}}
           </p>
         </mat-card-content>
       </mat-card>

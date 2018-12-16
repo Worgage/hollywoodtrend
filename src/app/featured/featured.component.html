@@ -17,6 +17,7 @@
 </div>
 
   <div class="more">
-    <button mat-stroked-button> More Articles </button>
+    <button mat-stroked-button *ngIf="page != 0" routerLink="/featured/{{page - 1 }}"> Previous Articles </button>
+    <button mat-stroked-button [disabled]="articles.length != 9"  routerLink="/featured/{{page + 1}}"> Next Articles </button>
   </div>
 </div>

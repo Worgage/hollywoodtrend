@@ -4,7 +4,10 @@ export class Movie {
   points: number;
   date: Date;
   director: string;
-  cast: string[];
-  categories: string[];
+  country: string;
+  genre: string;
+  cast: string;
+  distributed: string;
+  length: number;
   poster_url: string;
 }

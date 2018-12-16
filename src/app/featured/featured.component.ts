@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Article} from '../article';
+import {ActivatedRoute} from '@angular/router';
+import {DatabaseService} from '../database.service';
 
 @Component({
   selector: 'app-featured',
@@ -10,17 +12,16 @@ import {Article} from '../article';
 export class FeaturedComponent implements OnInit {
 
   articles: Article[];
+  private page: number;
 
-  constructor(private http: HttpClient) { }
+  constructor(private database: DatabaseService,
+              private params: ActivatedRoute) { }
 
   ngOnInit() {
-
-    this.articles = [];
-    const header = new HttpHeaders();
-    header.append('Content-type', 'text/plain');
-    this.http.post<Article[]>('http://localhost/article.php', header).subscribe(
-      result => { this.articles = result; }
-    );
+    this.params.params.subscribe(params => {
+      this.page = parseInt(this.params.snapshot.paramMap.get('page'), 10);
+      this.articles = this.database.getArticles( this.page * 9, (this.page * 9) + 9 );
+    });
   }
 
   count(i) {

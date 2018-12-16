@@ -33,11 +33,14 @@ export class LoginService implements OnInit {
   }
 
   isLogged(): boolean {
-    return true;
-    return this.user ? true : false;
+    return !!this.user;
   }
 
   getName(): string {
     return this.user ? this.user.name + ' ' + this.user.surname : '';
+  }
+
+  getId() {
+    return this.user ? this.user.id : '';
   }
 }

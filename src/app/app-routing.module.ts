@@ -8,7 +8,8 @@ import {MoviesListComponent} from './movies-list/movies-list.component';
 const routes: Routes = [
   { path: '', component: MainComponent  },
   { path: 'movie/:id', component: ArticlePageComponent },
-  { path: 'featured', component: FeaturedComponent },
+  {path: 'featured', redirectTo: 'featured/0'},
+  { path: 'featured/:page', component: FeaturedComponent },
   { path: 'movies', component: MoviesListComponent }
 ];
 

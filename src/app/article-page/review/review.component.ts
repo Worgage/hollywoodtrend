@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {LoginService} from '../../login.service';
+import {CommentsService} from '../../comments.service';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-review',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewComponent implements OnInit {
 
-  constructor() { }
+  private id: string;
+  comment: string;
+  points: number;
+
+  constructor(
+    private login: LoginService,
+    private comments: CommentsService,
+    private ref: MatDialogRef<ReviewComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    this.id = this.data['movie_id'];
+  }
+
+  onSubmit() {
+    this.comments.insert(this.login.getId(), this.id, this.comment, this.points.toString());
+    this.ref.close();
   }
 
 }

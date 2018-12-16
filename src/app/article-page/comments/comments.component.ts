@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {CommentsService} from '../../comments.service';
 
 @Component({
   selector: 'app-comments',
@@ -8,21 +9,15 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class CommentsComponent implements OnInit {
 
-  comments: [];
+  movie_comments: [];
   @Input() id: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private comments: CommentsService) { }
 
   ngOnInit() {
-    this.comments = [];
-
-    const data = new FormData();
-    data.append('id', this.id);
-    const header = new HttpHeaders();
-    header.append('Content-type', 'text/plain');
-    this.http.post<[]>('http://localhost/comments.php', data, {headers: header}).subscribe(
-      result =>  {this.comments = result; console.log(this.comments); }
-    );
+    this.movie_comments = [];
+    this.movie_comments = this.comments.getComments(parseInt(this.id, 10));
+    console.log(this.movie_comments);
   }
 
   count(i) {

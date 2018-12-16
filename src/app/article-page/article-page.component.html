@@ -4,7 +4,7 @@
       <p routerLink="/"> Home </p>
     </div>
       <div class="info-section" *ngIf="movie">
-        <span class="point"> 42 </span>
+        <span class="point"> {{getPoints()}} </span>
         <div class="title-row">
           <h3> {{movie.title | uppercase}}</h3>
           <button *ngIf="isLogged()" class="rate-button" mat-flat-button (click)="rate()"> Rate this movie </button>
@@ -16,11 +16,14 @@
           </div>
           <table class="box">
             <tr> <th> Name </th> <th> Year </th> <th> Director </th><th> Durata </th> <th> Country</th><th> Genres </th><th> Distributed by</th></tr>
-            <tr> <td> {{movie.title}}</td> <td> {{movie.date | slice:0:4}}</td> <td> {{movie.director}}</td> <td> 120m</td></tr>
+            <tr>
+              <td> {{movie.title}}</td> <td> {{movie.date | slice:0:4}}</td> <td> {{movie.director}}</td> <td> {{movie.length}} m</td>
+              <td> {{movie.country}}</td> <td> {{movie.genre}}</td> <td> {{movie.distributed}}</td>
+            </tr>
             <tr><th> Cast </th></tr>
-            <tr><td colspan="6"> io, tu , loro , egli, noi, voi, essi</td></tr>
+            <tr><td colspan="6" [innerHTML]="movie.cast"></td></tr>
             <tr><th>Plot</th></tr>
-            <tr><td colspan="6"> In questo film il protagonista non esiste</td></tr>
+            <tr><td colspan="6">trama</td></tr>
           </table>
         </div>
       </div>

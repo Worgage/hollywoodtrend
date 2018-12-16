@@ -47,6 +47,10 @@ export class ArticlePageComponent implements OnInit {
     );
   }
 
+  getPoints() {
+    return this.comments.getPoints(this.movie.id);
+  }
+
   getBody() {
     return this.article.body ? this.sanitizer.bypassSecurityTrustHtml(this.article.body) : '';
   }
@@ -62,7 +66,10 @@ export class ArticlePageComponent implements OnInit {
   rate() {
     this.dialog.open(ReviewComponent, {
       width: '500px',
-      height: '500px'
+      height: '500px',
+      data : {
+        movie_id: this.movie.id
+      }
     });
   }
 
