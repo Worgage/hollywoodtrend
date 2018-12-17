@@ -32,6 +32,7 @@ import { ReviewComponent } from './article-page/review/review.component';
 import {DatabaseService} from './database.service';
 import {CookieService} from 'ngx-cookie-service';
 import { RegisterComponent } from './header/register/register.component';
+import {HashLocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { RegisterComponent } from './header/register/register.component';
     ReviewComponent,
     RegisterComponent
   ],
-  providers: [CommentsService, LoginComponent, DatabaseService, CookieService],
+  providers: [CommentsService, LoginComponent, DatabaseService, CookieService,
+    {provide: HashLocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
