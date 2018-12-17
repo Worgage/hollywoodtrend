@@ -16,11 +16,12 @@ export class CommentsComponent implements OnInit {
   row = 4;
 
   constructor(private http: HttpClient,
-              private comments: CommentsService,
-              private params: ActivatedRoute) { }
+              private comments: CommentsService
+  ) { }
 
   ngOnInit() {
     this.movie_comments = [];
+    this.movie_comments = this.comments.getComments(parseInt(this.id, 10));
     this.comments.newComments().subscribe(
       () => {
       this.movie_comments = this.comments.getComments(parseInt(this.id, 10));
