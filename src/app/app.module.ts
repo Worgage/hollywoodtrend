@@ -22,7 +22,7 @@ import { ReviewsComponent } from './main/reviews/reviews.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './header/login/login.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { CommentsComponent } from './article-page/comments/comments.component';
@@ -31,6 +31,8 @@ import { FeaturedComponent } from './featured/featured.component';
 import {CommentsService} from './comments.service';
 import { ReviewComponent } from './article-page/review/review.component';
 import {DatabaseService} from './database.service';
+import {CookieService} from 'ngx-cookie-service';
+import { RegisterComponent } from './header/register/register.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import {DatabaseService} from './database.service';
     MoviesListComponent,
     FeaturedComponent,
     ReviewComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import {DatabaseService} from './database.service';
     FlexLayoutModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
 
     // Material
     MatDividerModule,
@@ -67,13 +71,14 @@ import {DatabaseService} from './database.service';
     MatSnackBarModule,
     MatCardModule,
     MatSliderModule,
-    MatProgressBarModule
+    MatProgressBarModule,
   ],
   entryComponents: [
     LoginComponent,
-    ReviewComponent
+    ReviewComponent,
+    RegisterComponent
   ],
-  providers: [CommentsService, LoginComponent, DatabaseService],
+  providers: [CommentsService, LoginComponent, DatabaseService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

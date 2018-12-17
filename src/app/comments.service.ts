@@ -9,7 +9,9 @@ export class CommentsService implements OnInit {
 
   comments: any;
 
-  constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
+  constructor(private http: HttpClient,
+              private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
     this.comments = {};
@@ -58,10 +60,10 @@ export class CommentsService implements OnInit {
     return {'background-color': 'white'};
   }
 
-  insert(user: string, movie: string, comment: string, points: string) {
+  insert(user: number, movie: number, comment: string, points: string) {
     const formData = new FormData();
-    formData.append('user_id', user.trim());
-    formData.append('movie_id', movie.trim());
+    formData.append('user_id', user.toString());
+    formData.append('movie_id', movie.toString());
     formData.append('comment', comment);
     formData.append('points', points);
     formData.append('Content-type', 'text/plain');
@@ -70,6 +72,9 @@ export class CommentsService implements OnInit {
         this.snackBar.open(result ? 'Comment Inserted' : 'Comment Error', '',
           {duration: 2000}
         );
+        if (result) {
+          location.reload();
+        }
       }
     );
   }

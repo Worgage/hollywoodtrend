@@ -1,3 +1,7 @@
+span {
+  margin-left: 15px;
+}
+
 .container {
   color: white;
   position: sticky;
@@ -33,6 +37,11 @@
   margin-right: 20px;
 }
 
+.search-bar {
+  text-align: left;
+  margin-left: 10px;
+}
+
 .header {
   display: flex;
   position: sticky;
@@ -50,3 +59,4 @@ button {
   background-color: black;
   color: white;
 }
+

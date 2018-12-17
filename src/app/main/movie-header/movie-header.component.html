@@ -5,7 +5,7 @@
         <div *ngIf="movies[i]">
           <img class="header-image" [src]="movies[i].poster_url"
                alt="" routerLink="/movie/{{movies[i].id}}">
-          <div class="header-text" *ngIf="movies[i].title"> {{movies[i].title | uppercase}} </div>
+          <div class="header-text" *ngIf="movies[i].title"> {{movies[i].title}} </div>
           <div class="score" [ngStyle]="getColor(movies[i].id)">{{getPoints(movies[i].id)}} </div>
         </div>
         </div>

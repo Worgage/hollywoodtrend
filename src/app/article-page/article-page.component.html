@@ -1,4 +1,3 @@
-<mat-progress-bar *ngIf="loading"></mat-progress-bar>
 <div class="article-container" [ngStyle]="background()">
   <div fxLayout="column">
     <div class="article-path">
@@ -8,7 +7,9 @@
         <span class="point"> {{getPoints()}} </span>
         <div class="title-row">
           <h3> {{movie.title | uppercase}}</h3>
-          <button *ngIf="isLogged()" class="rate-button" mat-flat-button (click)="rate()"> Rate this movie </button>
+          <button *ngIf="isLogged()" class="rate-button" mat-flat-button (click)="rate()"
+                  [disabled]="login.comment(movie.id)" #button>
+            {{button.disabled ? 'You have already voted this movie' : 'Rate this movie'}} </button>
         </div>
         <mat-divider></mat-divider>
         <div class="info-box" fxLayout="row">
@@ -34,7 +35,7 @@
       </div>
       <mat-divider></mat-divider>
       <div class="article-author" *ngIf="movie">
-        <p> Pubblicato da ciao il ciao giorno 20 sul film {{movie.title}}</p>
+        <p> Posted: {{article.date}}</p>
       </div>
       <div class="article-image" fxLayout="row" fxLayoutAlign="center center" >
         <img class="art-image" [src]="article.img_url" alt="">

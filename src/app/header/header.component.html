@@ -13,12 +13,14 @@
     <div class="search">
       <div class="search-content" fxLayout="row">
         <mat-form-field>
-          <input name="search" [(ngModel)]="search" matInput (keyup.enter)="go()" >
+          <input name="search" class="search-bar" placeholder="search a movie" [(ngModel)]="search" matInput (keyup.enter)="go()" >
         </mat-form-field>
         <mat-icon (click)="go()">search</mat-icon>
         <div class="login">
           <button *ngIf="!isLogged()" mat-flat-button (click)="openLogin()"> Login </button>
+          <button *ngIf="!isLogged()" mat-flat-button (click)="openRegister()"> Sign up </button>
           <span *ngIf="isLogged()"> {{getName()}} </span>
+          <span *ngIf="isLogged()" (click)="login.logout()"> Logout </span>
         </div>
       </div>
     </div>

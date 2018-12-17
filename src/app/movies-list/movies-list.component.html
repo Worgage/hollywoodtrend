@@ -4,7 +4,7 @@
     <div class="alph" fxLayout="column" fxLayoutAlign="space-around start" >
       <button mat-mini-fab *ngFor="let l of alph()">  {{l | uppercase}} </button>
     </div> -->
-    <div class="movies" fxLayout="column" fxLayoutAlign="space-around center" *ngIf="movies">
+    <div class="movies" fxLayout="column" fxLayoutAlign="space-around start" *ngIf="movies">
       <h3>Latest Movies </h3>
       <h2 *ngIf="movies.length == 0"> No movies </h2>
       <div fxLayout="row" *ngFor="let j of count(3); let y = index;">
@@ -27,6 +27,6 @@
   </div>
   <div class="more">
     <button mat-stroked-button *ngIf="page != 0" routerLink="/movies/{{page - 1 }}"> Previous Movies </button>
-    <button mat-stroked-button [disabled]="movies.length != 20"  routerLink="/movies/{{page + 1}}"> Next Movies </button>
+    <button mat-stroked-button [disabled]="movies.length != 18"  routerLink="/movies/{{page + 1}}"> Next Movies </button>
   </div>
 </div>

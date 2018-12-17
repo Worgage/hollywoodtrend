@@ -1,24 +1,23 @@
-<div class="comments-container" fxLayout="column">
-  <div class="comments-row" fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let _ of count(3); let j = index;">
-    <div  *ngFor="let _ of count(3); let i = index;">
-      <mat-card class="comment" *ngIf="movie_comments[i +(j*3)]">
+<div class="comments-container" fxLayout="column" fxLayoutAlign="space-around start" >
+  <div class="comments-row" fxLayout="row" *ngFor="let _ of count(3); let j = index;">
+    <div  *ngFor="let _ of count(row); let i = index;">
+      <mat-card class="comment" *ngIf="movie_comments[i +(j*row)]">
         <mat-card-header >
           <mat-card-title class="title">
-            {{movie_comments[i +(j*3)]['name'] }}
-            {{movie_comments[i +(j*3)]['surname']}}
+            {{movie_comments[i +(j*row)]['name'] }}
+            {{movie_comments[i +(j*row)]['surname']}}
           </mat-card-title>
           <mat-card-subtitle>Italian - 29</mat-card-subtitle>
           <div class="score" [ngStyle]="getColor(movie_comments[i +(j*3)]['points'])">
-            {{movie_comments[i +(j*3)]['points']}}
+            {{movie_comments[i +(j*row)]['points']}}
           </div>
         </mat-card-header>
         <mat-card-content>
           <p>
-            {{movie_comments[i +(j*3)]['comment']}}
+            {{movie_comments[i +(j*row)]['comment']}}
           </p>
         </mat-card-content>
       </mat-card>
     </div>
-
   </div>
 </div>

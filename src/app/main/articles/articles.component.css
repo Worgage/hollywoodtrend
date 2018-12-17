@@ -1,4 +1,7 @@
 
+h3 {
+  margin-left: 30px;
+}
 
 .art-second-text {
   height: 100%;
@@ -37,8 +40,5 @@ button {
   margin-bottom: 5px;
 }
 
-.subtext {
-  font-size: 16px;
-}
 
 

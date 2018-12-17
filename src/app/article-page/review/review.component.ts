@@ -10,7 +10,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 })
 export class ReviewComponent implements OnInit {
 
-  private id: string;
+  private id: number;
   comment: string;
   points: number;
 
@@ -25,8 +25,8 @@ export class ReviewComponent implements OnInit {
   }
 
   onSubmit() {
-    this.comments.insert(this.login.getId(), this.id, this.comment, this.points.toString());
-    this.ref.close();
+    this.comments.insert(this.login.getId(), this.id, this.comment.trim(), this.points.toString());
+    this.ref.close(true);
   }
 
 }

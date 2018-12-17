@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {HttpHeaders, HttpRequest} from '@angular/common/http';
-import {HttpClient} from '@angular/common/http';
+import {ActivatedRoute } from '@angular/router';
 import {Article} from '../article';
 import {Movie} from '../movie';
 import { Location } from '@angular/common';
@@ -10,6 +8,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {LoginService} from '../login.service';
 import {MatDialog} from '@angular/material';
 import {ReviewComponent} from './review/review.component';
+import {DatabaseService} from '../database.service';
 
 @Component({
   selector: 'app-article-page',
@@ -18,14 +17,13 @@ import {ReviewComponent} from './review/review.component';
 })
 export class ArticlePageComponent implements OnInit {
 
-  private id = '';
+  private id: string;
   article: Article;
   movie: Movie;
-  loading: boolean;
 
   constructor(
     private params: ActivatedRoute,
-    private http: HttpClient,
+    private database: DatabaseService,
     private comments: CommentsService,
     private sanitizer: DomSanitizer,
     public dialog: MatDialog,
@@ -33,20 +31,10 @@ export class ArticlePageComponent implements OnInit {
     private login: LoginService) { }
 
   ngOnInit() {
-    this.loading = true;
     window.scrollTo(0, 0);
-    console.log(this.login.isLogged());
     this.id = this.params.snapshot.paramMap.get('id');
-    const header = new HttpHeaders();
-    header.append('Content-type', 'text/plain');
-    const data = new FormData();
-    data.append('id', this.id);
-    this.http.post<Article[]>('http://localhost/article.php', data, {headers: header}).subscribe(
-      result => this.article = result[0]
-    );
-    this.http.post<Movie[]>('http://localhost/movies.php', data, {headers: header}).subscribe(
-      result => {this.movie = result[0]; this.loading = false; }
-    );
+    this.movie = this.database.getMovie(this.id);
+    this.article = this.database.getArticle(this.id);
   }
 
   getPoints() {

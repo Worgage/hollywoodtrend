@@ -31,16 +31,28 @@ export class DatabaseService implements OnInit {
     );
   }
 
+  getMovie(id): Movie {
+    return this.movies_loaded ? this.movies.find(
+      movie => movie.id === id
+    ) : undefined;
+  }
+
+  getArticle(id): Article {
+    return this.articles_loaded ? this.articles.find(
+      article => article.movie_id === id
+    ) : undefined;
+  }
+
   getArticles(from: number, to: number) {
-    return this.articles ? this.articles.slice(from, to) : [];
+    return this.articles_loaded ? this.articles.slice(from, to) : [];
   }
 
   getMovies(from: number, to: number) {
-    return this.movies ? this.movies.slice(from, to) : [];
+    return this.movies_loaded ? this.movies.slice(from, to) : [];
   }
 
   searchMovie(text: string) {
-    return this.movies ? this.movies.filter(
+    return this.movies_loaded ? this.movies.filter(
       movie => movie.title.toLowerCase().includes(text.toLowerCase())
     ) : [];
   }

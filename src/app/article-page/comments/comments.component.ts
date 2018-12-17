@@ -12,6 +12,8 @@ export class CommentsComponent implements OnInit {
   movie_comments: [];
   @Input() id: string;
 
+  row = 4;
+
   constructor(private http: HttpClient, private comments: CommentsService) { }
 
   ngOnInit() {

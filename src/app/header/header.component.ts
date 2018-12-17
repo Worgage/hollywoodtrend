@@ -3,6 +3,7 @@ import {MatDialog, MatDialogRef} from '@angular/material';
 import {LoginComponent} from './login/login.component';
 import {LoginService} from '../login.service';
 import {Router} from '@angular/router';
+import {RegisterComponent} from './register/register.component';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +24,13 @@ export class HeaderComponent {
     });
   }
 
+  openRegister() {
+    this.ref = this.dialog.open(RegisterComponent, {
+      width: '330px',
+      height: '330px'
+    });
+  }
+
   isLogged() {
     return this.login.isLogged();
   }
@@ -34,7 +42,9 @@ export class HeaderComponent {
 
   go() {
     if (this.search !== '') {
-      this.router.navigate(['/movies/0/' + this.search]);
+      this.router.navigate(['movies/0/' + this.search]);
+    } else {
+      this.router.navigate(['movies/0']);
     }
   }
 

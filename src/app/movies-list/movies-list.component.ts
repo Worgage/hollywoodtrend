@@ -19,10 +19,11 @@ export class MoviesListComponent implements OnInit {
 
   ngOnInit() {
     this.params.params.subscribe(params => {
+      window.scrollTo(0, 0);
       this.movies = [];
         this.page = parseInt( params['page'], 10);
         const search =  params['search'];
-        this.movies =  search ? this.database.searchMovie(search) : this.database.getMovies( 20 * this.page , 20 * (this.page) + 20 );
+        this.movies =  search ? this.database.searchMovie(search) : this.database.getMovies( 18 * this.page , 18 * (this.page) + 18 );
       }
     );
     }

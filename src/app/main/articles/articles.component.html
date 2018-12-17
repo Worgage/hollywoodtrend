@@ -1,7 +1,6 @@
 <div class="container-news" fxLayout="row" fxLayoutAlign="space-evenly center">
-
     <div class="top-content" fxLayout="column">
-      <h2>Our Reviews</h2>
+      <h3>Our Reviews</h3>
       <div class="news" *ngIf="articles">
         <div class="articles-row" fxLayout="row" fxLayoutAlign="center start" *ngFor="let _ of count(2);
         let j = index">
@@ -10,7 +9,7 @@
               <mat-card class="article" routerLink="/movie/{{articles[i + (j*4)].movie_id}}" *ngIf="articles[i]">
                 <img mat-card-image class="article-image" [src]="articles[i + (j*4)].img_url" alt="">
                 <mat-card-content>
-                  <p class="subtext">
+                  <p class="bigger-text">
                     {{articles[i + (j*4)].subtext }}
                   </p>
                 </mat-card-content>

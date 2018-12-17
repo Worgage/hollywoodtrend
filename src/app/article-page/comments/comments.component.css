@@ -3,7 +3,9 @@
 }
 
 .comments-row {
+  margin-top: 30px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 p {
@@ -28,6 +30,7 @@ like {
 .comment {
   background-color: gainsboro;
   color: black;
+  margin: 30px;
 }
 
 .title {

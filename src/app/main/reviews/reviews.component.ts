@@ -15,7 +15,7 @@ export class ReviewsComponent implements OnInit {
   constructor(private database: DatabaseService, private comments: CommentsService) { }
 
   ngOnInit() {
-    this.movies = this.database.getMovies(0, 11);
+    this.movies = this.database.getMovies(6, 17);
   }
 
   count(i) {

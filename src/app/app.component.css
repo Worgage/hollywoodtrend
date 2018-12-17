@@ -13,7 +13,7 @@
 
 .body {
   background-color: black;
-  min-height: 1200px;
+  min-height: 1000px;
   min-width: 1300px;
   width: auto;
   height: 100%;
@@ -27,7 +27,7 @@
   width: auto;
   height: 100%;
   max-width: 1300px;
-  margin: auto auto 100px;
+  margin: 30px auto 100px;
 }
 
 
