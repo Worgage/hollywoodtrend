@@ -5,7 +5,7 @@
       <button mat-mini-fab *ngFor="let l of alph()">  {{l | uppercase}} </button>
     </div> -->
     <div class="movies" fxLayout="column" fxLayoutAlign="space-around start" *ngIf="movies">
-      <h3>Latest Movies </h3>
+      <h3>Movies Archive</h3>
       <h2 *ngIf="movies.length == 0"> No movies </h2>
       <div fxLayout="row" *ngFor="let j of count(3); let y = index;">
         <div *ngFor="let i of count(6); let x = index;">

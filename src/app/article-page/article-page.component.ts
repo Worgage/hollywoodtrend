@@ -17,7 +17,7 @@ import {DatabaseService} from '../database.service';
 })
 export class ArticlePageComponent implements OnInit {
 
-  private id: string;
+  id: string;
   article: Article;
   movie: Movie;
 

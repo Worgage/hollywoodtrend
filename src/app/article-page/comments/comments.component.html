@@ -7,7 +7,7 @@
             {{movie_comments[i +(j*row)]['name'] }}
             {{movie_comments[i +(j*row)]['surname']}}
           </mat-card-title>
-          <mat-card-subtitle>Italian - 29</mat-card-subtitle>
+          <mat-card-subtitle *ngIf="movie_comments[i +(j*row)]">{{movie_comments[i +(j*row)]['nation']}} - {{movie_comments[i +(j*row)]['age']}}</mat-card-subtitle>
           <div class="score" [ngStyle]="getColor(movie_comments[i +(j*3)]['points'])">
             {{movie_comments[i +(j*row)]['points']}}
           </div>

@@ -8,8 +8,8 @@ import {LoginService} from '../../login.service';
 })
 export class LoginComponent {
 
-  private email: string;
-  private password: string;
+   email: string;
+   password: string;
 
   constructor(private login: LoginService) { }
 

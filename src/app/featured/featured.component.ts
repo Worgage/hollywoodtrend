@@ -12,13 +12,14 @@ import {DatabaseService} from '../database.service';
 export class FeaturedComponent implements OnInit {
 
   articles: Article[];
-  private page: number;
+  page: number;
 
   constructor(private database: DatabaseService,
               private params: ActivatedRoute) { }
 
   ngOnInit() {
     this.params.params.subscribe(params => {
+      window.scrollTo(0, 0);
       this.page = parseInt(this.params.snapshot.paramMap.get('page'), 10);
       this.articles = this.database.getArticles( this.page * 9, (this.page * 9) + 9 );
     });

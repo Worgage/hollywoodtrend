@@ -24,7 +24,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './header/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ArticlePageComponent } from './article-page/article-page.component';
-import { FooterComponent } from './footer/footer.component';
 import { CommentsComponent } from './article-page/comments/comments.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { FeaturedComponent } from './featured/featured.component';
@@ -45,7 +44,6 @@ import { RegisterComponent } from './header/register/register.component';
     ReviewsComponent,
     LoginComponent,
     ArticlePageComponent,
-    FooterComponent,
     CommentsComponent,
     MoviesListComponent,
     FeaturedComponent,

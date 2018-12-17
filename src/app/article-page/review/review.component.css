@@ -9,10 +9,16 @@ textarea {
 }
 
 .mat-slider {
-  width: 80%;
+  width: 90%;
+  text-align: center;
 }
 
 .example-full-width{
   width: 100%;
   height: 100%;
+}
+
+
+.vote {
+  text-align: center;
 }

@@ -1,6 +1,7 @@
-import {Injectable, OnInit} from '@angular/core';
+import {EventEmitter, Injectable, OnInit, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {MatSnackBar} from '@angular/material';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,17 @@ export class CommentsService implements OnInit {
 
   comments: any;
 
+  new: EventEmitter<boolean> = new EventEmitter();
+
   constructor(private http: HttpClient,
-              private snackBar: MatSnackBar
+              private snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
+    this.loadComments();
+  }
+
+  loadComments() {
     this.comments = {};
     const header = new HttpHeaders();
     header.append('Content-type', 'text/plain');
@@ -27,6 +34,7 @@ export class CommentsService implements OnInit {
             this.comments[comment['movie_id']].push(comment);
           }
         );
+        this.new.emit(true);
       }
     );
   }
@@ -57,7 +65,6 @@ export class CommentsService implements OnInit {
     if ( perc >= 85) { return {'background-color': 'darkseagreen'}; }
     if ( perc < 85 && perc >= 60) { return {'background-color': 'goldenrod'}; }
     if ( perc < 60 ) { return {'background-color': 'lightcoral' }; }
-    return {'background-color': 'white'};
   }
 
   insert(user: number, movie: number, comment: string, points: string) {
@@ -73,9 +80,14 @@ export class CommentsService implements OnInit {
           {duration: 2000}
         );
         if (result) {
-          location.reload();
+          this.ngOnInit();
+         this.new.emit(true);
         }
       }
     );
+  }
+
+  newComments() {
+    return this.new;
   }
 }

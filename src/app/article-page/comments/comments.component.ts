@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {CommentsService} from '../../comments.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-comments',
@@ -14,11 +15,17 @@ export class CommentsComponent implements OnInit {
 
   row = 4;
 
-  constructor(private http: HttpClient, private comments: CommentsService) { }
+  constructor(private http: HttpClient,
+              private comments: CommentsService,
+              private params: ActivatedRoute) { }
 
   ngOnInit() {
     this.movie_comments = [];
-    this.movie_comments = this.comments.getComments(parseInt(this.id, 10));
+    this.comments.newComments().subscribe(
+      () => {
+      this.movie_comments = this.comments.getComments(parseInt(this.id, 10));
+    }
+    );
   }
 
   count(i) {
